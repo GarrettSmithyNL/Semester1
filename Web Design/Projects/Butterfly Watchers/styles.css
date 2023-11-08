@@ -1,0 +1,82 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+}
+
+a:visited,
+a:link {
+  color: black;
+  text-decoration: none;
+  font-size: 18pt;
+  font-weight: 700;
+}
+
+a:hover {
+  color: gray;
+  background-color: black;
+  text-decoration: none;
+  font-size: 18pt;
+  font-weight: 700;
+}
+
+li {
+  margin-left: 20px;
+}
+
+.mainbox {
+  width: 1002px;
+  height: 1000px;
+  background-color: white;
+  margin: 20px;
+  text-align: left;
+  border: 1px solid black;
+}
+
+.headerBox {
+  width: 1000px;
+  height: 250px;
+  background-color: darkgreen;
+}
+
+.navBox {
+  width: 1000px;
+  height: 50px;
+  background-color: grey;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-top: 9px;
+}
+
+.leftBox {
+  width: 350px;
+  height: 500px;
+  background-color: lightgrey;
+  float: left;
+  border-right: 1px solid black;
+  padding: 10px;
+}
+
+.rightBox {
+  width: 650px;
+  height: 500px;
+  background-color: white;
+  float: right;
+}
+
+.footerBox {
+  width: 1000px;
+  height: 75px;
+  background-color: slategray;
+  border: 1px solid black;
+  float: bottom;
+}
+
+.blueDate {
+  color: blue;
+  font-family: "Georgia ";
+}
