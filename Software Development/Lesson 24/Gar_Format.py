@@ -6,6 +6,7 @@ import datetime
 
 INT_FORMATTING = "{:,d}"
 DATE_SHORT_FORMATTING = "%d/%m/%y"
+DATE_MEDIUM_FORMATTING = "%d-%b-%y"
 DATE_LONG_FORMATTING = "%d %B %Y"
 DATE_SHORT_WEEKDAY = "%a, %d-%b-%y"
 DATE_LONG_WEEKDAY = "%A, %B %d %Y"
@@ -22,6 +23,9 @@ def formatMoney(amount):
 
 def dateShort(pDate):
     return pDate.strftime(DATE_SHORT_FORMATTING)
+
+def dateMedium(pDate):
+    return pDate.strftime(DATE_MEDIUM_FORMATTING)
 
 def dateLong(pDate):
     return pDate.strftime(DATE_LONG_FORMATTING)
