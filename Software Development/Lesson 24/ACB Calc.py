@@ -1,7 +1,9 @@
 '''
 This program calculates the paystub for an employee of ABC Company. 
-It takes in the employee's name, social insurance number, weekly sales, medical benefits, extra taxes, and RRSP contributions. 
-It then calculates the commission, base pay, gross pay, income tax, CPP, EI, extra deductions, total deductions, and net pay. 
+It takes in the employee's name, social insurance number, weekly sales, 
+medical benefits, extra taxes, and RRSP contributions. 
+It then calculates the commission, base pay, gross pay, income tax, CPP, 
+EI, extra deductions, total deductions, and net pay. 
 Finally, it prints out the paystub for the employee.
 By: Garrett Smiht
 Date:  Nov 14 2023
@@ -119,6 +121,24 @@ def eiDeduction(grossPay):
     """
     return grossPay * EI_RATE
 
+def getMedicalBenefitOption(medBenefits):
+    """
+    Returns the corresponding medical benefit option based on the input string.
+
+    Args:
+    medBenefits (str): A string representing the medical benefit option.
+
+    Returns:
+    float: The cost of the medical benefit option.
+    """
+    if medBenefits == "S":
+            return SELF_MEDICAL_BENEFITS
+    elif medBenefits == "F":
+        return FAMILY_MEDICAL_BENEFITS
+    elif medBenefits == "C":
+        return COVERED_MEDICAL_BENEFITS
+    return medBenefits
+
 def extraDeduction(extraTax, rrsp, medical):
     """
     Calculates the total amount of extra deductions for a given tax year.
@@ -201,14 +221,6 @@ while True:
                 break
             else:
                 print("Please enter a valid option.")
-
-    #Setting the amount for the medicalBenefits variable based on the user input
-    if medBenefits == "S":
-        medicalBenefits = SELF_MEDICAL_BENEFITS
-    elif medBenefits == "F":
-        medicalBenefits = FAMILY_MEDICAL_BENEFITS
-    elif medBenefits == "C":
-        medicalBenefits = COVERED_MEDICAL_BENEFITS
     
     while True:
         extraTaxBool = input("Extra Taxes (Y/N): ").upper()
@@ -249,6 +261,7 @@ while True:
     incomeTax = incomeTaxDeduction(grossPay)
     cpp = cppDeduction(grossPay)
     ei = eiDeduction(grossPay)
+    medicalBenefits = getMedicalBenefitOption(medBenefits)
     extraDeductions = extraDeduction(extraTax, rrspCon, medicalBenefits)
     totalDeductions = incomeTax + cpp + ei + extraDeductions
     netPay = grossPay - totalDeductions
